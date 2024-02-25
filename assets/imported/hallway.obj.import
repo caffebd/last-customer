@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://ddlqxr01lxwqr"
+path="res://.godot/imported/hallway.obj-6fa9a27e03e52311f692e64638a8329c.mesh"
+
+[deps]
+
+files=["res://.godot/imported/hallway.obj-6fa9a27e03e52311f692e64638a8329c.mesh"]
+
+source_file="res://assets/imported/hallway.obj"
+dest_files=["res://.godot/imported/hallway.obj-6fa9a27e03e52311f692e64638a8329c.mesh", "res://.godot/imported/hallway.obj-6fa9a27e03e52311f692e64638a8329c.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

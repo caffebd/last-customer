@@ -1,0 +1,26 @@
+[remap]
+
+importer="3d_texture"
+type="CompressedTexture3D"
+uid="uid://wna6fd8gu1v"
+path="res://.godot/imported/driver1_icon_tex.png-39fcf51ee7a29ea025bdf65445929c57.ctex3d"
+metadata={
+"vram_texture": false
+}
+
+[deps]
+
+source_file="res://assets/UI/driver1_icon_tex.png"
+dest_files=["res://.godot/imported/driver1_icon_tex.png-39fcf51ee7a29ea025bdf65445929c57.ctex3d"]
+
+[params]
+
+compress/mode=1
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/hdr_compression=1
+compress/channel_pack=0
+mipmaps/generate=true
+mipmaps/limit=-1
+slices/horizontal=8
+slices/vertical=8

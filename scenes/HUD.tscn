@@ -1,0 +1,128 @@
+[gd_scene load_steps=8 format=3 uid="uid://cm3d1u3ihuwtd"]
+
+[ext_resource type="Script" path="res://scripts/HUD.gd" id="1_ccfj4"]
+[ext_resource type="Texture2D" uid="uid://rafx06oxl8x6" path="res://assets/UI/target.png" id="2_4bb86"]
+[ext_resource type="PackedScene" uid="uid://cjy76vqc3kjtx" path="res://scenes/HandIcon.tscn" id="3_yk4eq"]
+[ext_resource type="FontFile" uid="uid://cnv2p7n8e175w" path="res://assets/fonts/Comfortaa/Comfortaa-VariableFont_wght.ttf" id="4_qs75q"]
+[ext_resource type="Texture2D" uid="uid://d715bvsj07qp" path="res://assets/UI/player_avatar.png" id="5_xc650"]
+[ext_resource type="Texture2D" uid="uid://du0pn0jhq3thd" path="res://assets/UI/call_avatar_b.png" id="6_myuvd"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_s4kd3"]
+bg_color = Color(0.929412, 0.886275, 0.788235, 1)
+
+[node name="Hud" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_ccfj4")
+
+[node name="target" type="TextureRect" parent="."]
+unique_name_in_owner = true
+modulate = Color(1, 1, 1, 0.588235)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -7.5
+offset_top = -7.5
+offset_right = 7.5
+offset_bottom = 7.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_4bb86")
+expand_mode = 2
+
+[node name="Inventory" type="GridContainer" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -30.5
+offset_top = -123.0
+offset_right = 30.5
+offset_bottom = -67.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/h_separation = 5
+columns = 7
+
+[node name="HandIcon" parent="Inventory" instance=ExtResource("3_yk4eq")]
+layout_mode = 2
+
+[node name="Dialogue" type="Label" parent="."]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -319.5
+offset_top = -270.0
+offset_right = 319.5
+offset_bottom = -160.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_qs75q")
+theme_override_font_sizes/font_size = 35
+theme_override_styles/normal = SubResource("StyleBoxFlat_s4kd3")
+text = "Got to fix it yourself. Here's a screwdriver. Good luck."
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="PlayerAvatar" type="TextureRect" parent="Dialogue"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 0
+offset_left = -53.5
+offset_top = 1.0
+offset_right = -3.5
+offset_bottom = 51.0
+texture = ExtResource("5_xc650")
+
+[node name="CallAvatar" type="TextureRect" parent="Dialogue"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 0
+offset_left = -68.5
+offset_top = 55.0
+offset_right = -5.5
+offset_bottom = 105.0
+texture = ExtResource("6_myuvd")
+
+[node name="NoteText" type="RichTextLabel" parent="."]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -870.0
+offset_top = -270.0
+offset_right = -389.0
+offset_bottom = -19.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/bold_italics_font_size = 48
+theme_override_font_sizes/italics_font_size = 48
+theme_override_font_sizes/normal_font_size = 48
+theme_override_font_sizes/bold_font_size = 48
+theme_override_styles/normal = SubResource("StyleBoxFlat_s4kd3")
+bbcode_enabled = true
+text = "You should have taken the stairs my friend."
+autowrap_mode = 2

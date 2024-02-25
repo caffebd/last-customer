@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://c31cu7huh24rr"]
+
+[ext_resource type="FontFile" uid="uid://cnv2p7n8e175w" path="res://assets/fonts/Comfortaa/Comfortaa-VariableFont_wght.ttf" id="1_hcmqg"]
+[ext_resource type="Script" path="res://scripts/MainMenu.gd" id="1_mhvyv"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_g1v20"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_mhvyv")
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 848.0
+offset_top = 500.0
+offset_right = 1062.0
+offset_bottom = 601.0
+theme_override_fonts/font = ExtResource("1_hcmqg")
+theme_override_font_sizes/font_size = 82
+theme_override_styles/normal = SubResource("StyleBoxFlat_g1v20")
+text = "PLAY"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

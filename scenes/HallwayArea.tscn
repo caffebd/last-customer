@@ -1,0 +1,68 @@
+[gd_scene load_steps=6 format=3 uid="uid://cjk1n55poyfos"]
+
+[ext_resource type="PackedScene" uid="uid://bmt2my16fs6kr" path="res://assets/hallway.tscn" id="1_hrnkp"]
+[ext_resource type="Script" path="res://scripts/HallwayArea.gd" id="1_slcnw"]
+[ext_resource type="PackedScene" uid="uid://cpucufodphld5" path="res://scenes/Player.tscn" id="2_u0f2k"]
+
+[sub_resource type="Environment" id="Environment_pd40s"]
+fog_enabled = true
+fog_light_color = Color(0.152941, 0, 0.0588235, 1)
+fog_density = 0.1454
+volumetric_fog_density = 0.1739
+volumetric_fog_albedo = Color(0.231373, 0.145098, 0.0666667, 1)
+volumetric_fog_emission_energy = 217.18
+volumetric_fog_gi_inject = 1.4
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ck7aj"]
+size = Vector3(0.075, 1, 2.89)
+
+[node name="HallwayArea" type="Node3D"]
+script = ExtResource("1_slcnw")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_pd40s")
+
+[node name="hallway" parent="." instance=ExtResource("1_hrnkp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.4825, 0, 0)
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="hallway"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.857735, -1.39317, -1.00626)
+
+[node name="hallway2" parent="." instance=ExtResource("1_hrnkp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.152161, 0, 0)
+
+[node name="ResetPos" type="Marker3D" parent="hallway2"]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.493127, -1.59494, -0.892313)
+
+[node name="hallway3" parent="." instance=ExtResource("1_hrnkp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.77824, 0, 0)
+
+[node name="Reset" type="Area3D" parent="hallway3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.636, -0.878)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="hallway3/Reset"]
+shape = SubResource("BoxShape3D_ck7aj")
+
+[node name="hallway4" parent="." instance=ExtResource("1_hrnkp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.4052, 0, 0)
+
+[node name="hallway6" parent="." instance=ExtResource("1_hrnkp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.6659, 0, 0)
+
+[node name="hallway7" parent="." instance=ExtResource("1_hrnkp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.2928, 0, 0)
+
+[node name="hallway8" parent="." instance=ExtResource("1_hrnkp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.9221, 0, 0)
+
+[node name="hallway9" parent="." instance=ExtResource("1_hrnkp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32.549, 0, 0)
+
+[node name="hallway5" parent="." instance=ExtResource("1_hrnkp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.0313, 0, 0)
+
+[node name="Player" parent="." instance=ExtResource("2_u0f2k")]
+transform = Transform3D(0.0152536, 0, 0.999884, 0, 1, 0, -0.999884, 0, 0.0152536, 1.77954, -0.284751, -1.00364)
+
+[connection signal="body_entered" from="hallway3/Reset" to="." method="_on_reset_body_entered"]

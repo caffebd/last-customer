@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://dos4lgrn12efq"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_x7d7b"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_hd3in"]
+material = SubResource("StandardMaterial3D_x7d7b")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_01ugv"]
+albedo_color = Color(0, 0.486275, 0.0313726, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_s5sf6"]
+material = SubResource("StandardMaterial3D_01ugv")
+
+[node name="FuseHand" type="Node3D"]
+transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 0, 0, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.0887483, 0, 0, 0, 0.0887483, 0, 0, 0, 0.0887483, 0, 0, 0)
+layers = 524288
+mesh = SubResource("CylinderMesh_hd3in")
+skeleton = NodePath("")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.0923688, 0, 0, 0, 0.0185239, 0, 0, 0, 0.0923688, 0.000785947, 0.0697137, -0.000600159)
+layers = 524288
+mesh = SubResource("CylinderMesh_s5sf6")
+skeleton = NodePath("")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.0923688, 0, 0, 0, 0.0185239, 0, 0, 0, 0.0923688, 0.000785947, -0.0741181, -0.000600159)
+layers = 524288
+mesh = SubResource("CylinderMesh_s5sf6")
+skeleton = NodePath("")

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dpmv6mor2k381"
+path="res://.godot/imported/Nearly Die 4.mp3-65363a1846963995e20d001991f2febb.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/Nearly Die 4.mp3"
+dest_files=["res://.godot/imported/Nearly Die 4.mp3-65363a1846963995e20d001991f2febb.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://7yh7oj8i64bc"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_j823q"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_gi8cf"]
+material = SubResource("StandardMaterial3D_j823q")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_spdv2"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_ltrgx"]
+material = SubResource("StandardMaterial3D_spdv2")
+
+[node name="CrowbarHand" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 0.136839, -0.990593, 0, 0.990593, 0.136839, 0.491209, 0, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.174172, 0, 0, 0, 0.109377, 0, 0, 0, 1, 0, 0, 0)
+layers = 524288
+mesh = SubResource("BoxMesh_gi8cf")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.260455, 0, 0, 0, 0.260455, 0, 0, 0, 0.260455, -0.12072, 0, -0.343808)
+layers = 524288
+mesh = SubResource("BoxMesh_ltrgx")

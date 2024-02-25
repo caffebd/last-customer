@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://cjy76vqc3kjtx"]
+
+[ext_resource type="Texture2D" uid="uid://x6ween0ya0av" path="res://assets/UI/hand_icon.png" id="1_qq155"]
+
+[node name="HandIcon" type="ColorRect"]
+custom_minimum_size = Vector2(52, 52)
+layout_direction = 1
+offset_right = 52.0
+offset_bottom = 52.0
+color = Color(1, 1, 1, 0.137255)
+
+[node name="HandIconTexture" type="TextureRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_qq155")

@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=3 uid="uid://0nwk2nsj7oc0"]
+
+[ext_resource type="Texture2D" uid="uid://bcrkr7r5wx6aj" path="res://assets/UI/crowbar_icon.png" id="1_wjhga"]
+
+[node name="CrowbarIcon" type="ColorRect"]
+custom_minimum_size = Vector2(52, 52)
+offset_right = 52.0
+offset_bottom = 52.0
+color = Color(1, 1, 1, 0.137255)
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 5.0
+offset_right = 39.0
+offset_bottom = 55.0
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("1_wjhga")

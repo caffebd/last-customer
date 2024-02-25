@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://kxm8gydq275d"
+path="res://.godot/imported/Dark Fantasy Studio-Monster-10.mp3-178e29a10e3b94c741df4854c9a68102.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/monster/Dark Fantasy Studio-Monster-10.mp3"
+dest_files=["res://.godot/imported/Dark Fantasy Studio-Monster-10.mp3-178e29a10e3b94c741df4854c9a68102.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
