@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://cx5pqkrw3lp6u"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rn3pi"]
+albedo_color = Color(0.184314, 0.227451, 1, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_o3vai"]
+material = SubResource("StandardMaterial3D_rn3pi")
+
+[node name="BeansHand" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.404026, 0, 0, 0, 0.257978, 0, 0, 0, 0.404026, 0, 0, 0)
+mesh = SubResource("CylinderMesh_o3vai")

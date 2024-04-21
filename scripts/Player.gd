@@ -1,7 +1,7 @@
 extends CharacterBody3D
 
 
-const WALK_SPEED:float = 1.25
+const WALK_SPEED:float = 2.0
 const RUN_SPEED: float = 3.5
 const JUMP_VELOCITY: float = 3.0
 
@@ -34,6 +34,8 @@ var in_hand:String=""
 
 var crowbar_hand = preload("res://scenes/CrowbarHand.tscn")
 var fuse_hand = preload("res://scenes/FuseHand.tscn")
+var beans_hand = preload("res://props/beans_hand.tscn")
+var cereal_hand = preload("res://props/Cerealhand.tscn")
 
 
 
@@ -46,6 +48,7 @@ func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	Signals.hand_item.connect(_set_hand_item)
 	Signals.remove_item.connect(_remove_item)
+	Signals.place_item.connect(_place_item)
 
 	
 	get_saved_inventory()
@@ -70,6 +73,14 @@ func _set_hand_item(item:String):
 			return
 		"Crowbar":
 			var in_hand_item = crowbar_hand.instantiate()
+			player_hand.add_child(in_hand_item)
+			in_hand = item
+		"Beans":
+			var in_hand_item = beans_hand.instantiate()
+			player_hand.add_child(in_hand_item)
+			in_hand = item
+		"Cereal":
+			var in_hand_item = cereal_hand.instantiate()
 			player_hand.add_child(in_hand_item)
 			in_hand = item
 		"Fuse":
@@ -104,18 +115,21 @@ func _input(event):
 	if Input.is_action_just_released("inventory_down"):
 		hud.inventory_down()
 	
+	if Input.is_action_just_pressed("set_basket"):
+		var temp_items:Array[String] = ["tape", "mask", "knife"]
+		Signals.emit_signal("set_basket", temp_items)
 	
 	if Input.is_action_just_pressed("to_menu"):
 		_to_menu()
 	
 func _take_action():
 	var collider = ray.get_collider()
-	if collider != null and collider is StaticBody3D:
+	if collider != null:
 		if collider.has_method("use_action"):
 			collider.use_action(in_hand)
 		elif collider.is_in_group("collectible"):
 			#hud.SaveState.saved_inventory.append(collider.item_name)
-			collider.get_parent().queue_free()
+			collider.queue_free()
 			hud.add_to_inventory(collider.item_name)
 
 
@@ -133,9 +147,10 @@ func _physics_process(delta):
 	var collider = ray.get_collider()
 	hud.target.modulate = Color(1,1,1,0.2)
 
+
 	%PlayerInfoLabel.visible = false
-	if collider != null and collider is StaticBody3D:
-		if collider.has_method("use_action") or collider.is_in_group("show_hud"):
+	if collider != null:
+		if collider.has_method("use_action") or collider.is_in_group("show_hud") or collider.is_in_group("collectible"):
 			hud.target.modulate = Color(1,1,1,1)
 
 			
@@ -184,5 +199,23 @@ func _on_fall_area_body_entered(body):
 		get_tree().change_scene_to_file("res://scenes/Menu.tscn")
 
 
-
+func _place_item(item, location):
+	match item:
+		"Crowbar":
+			var in_hand_item = crowbar_hand.instantiate()
+			location.add_child(in_hand_item)
+			_remove_item(item)
+		"Beans":
+			var in_hand_item = beans_hand.instantiate()
+			location.add_child(in_hand_item)
+			_remove_item(item)
+		"Cereal":
+			var in_hand_item = cereal_hand.instantiate()
+			location.add_child(in_hand_item)
+			_remove_item(item)
+		"Fuse":
+			var in_hand_item = crowbar_hand.instantiate()
+			location.add_child(in_hand_item)
+			_remove_item(item)
+	
 

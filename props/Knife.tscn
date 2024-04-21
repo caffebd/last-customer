@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://p6afg8g1r157"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_55xjv"]
+albedo_color = Color(0.886262, 0.886261, 0.886262, 1)
+emission_enabled = true
+emission = Color(0.77084, 0.770839, 0.770839, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xuer8"]
+albedo_color = Color(0, 0, 0, 1)
+
+[node name="Knife" type="Node3D"]
+transform = Transform3D(-1, 0, -3.82865e-08, 0, 1, 0, 8.74228e-08, 0, -0.437947, 0, 0, 0)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(0.206359, 0, 3.55271e-15, 0, 0.0283687, 0, -1.06581e-14, 0, 0.202979, 0, 0, 0)
+material = SubResource("StandardMaterial3D_55xjv")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="."]
+transform = Transform3D(0.223135, 0, 4.44089e-15, 0, 0.0351381, 0, 0, 0, 0.234803, -0.164791, 0, 9.58931e-09)
+material = SubResource("StandardMaterial3D_xuer8")

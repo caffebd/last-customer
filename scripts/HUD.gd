@@ -9,6 +9,10 @@ var fuse_icon = preload("res://scenes/FuseIcon.tscn")
 
 var crowbar_icon = preload("res://scenes/CrowbarIcon.tscn")
 
+var beans_icon = preload("res://scenes/BeansIcon.tscn")
+
+var cereal_icon = preload("res://scenes/CerealIcon.tscn")
+
 
 var inventory_index: int = 0
 
@@ -37,6 +41,16 @@ func add_to_inventory(item:String):
 				inventory_grid.add_child(icon_scene)
 				SaveState.saved_inventory.append(item)
 
+			"Beans":
+				var icon_scene = beans_icon.instantiate()
+				inventory_grid.add_child(icon_scene)
+				SaveState.saved_inventory.append(item)
+
+			"Cereal":
+				var icon_scene = cereal_icon.instantiate()
+				inventory_grid.add_child(icon_scene)
+				SaveState.saved_inventory.append(item)
+
 			"Crowbar":
 				var icon_scene = crowbar_icon.instantiate()
 				inventory_grid.add_child(icon_scene)
@@ -50,6 +64,15 @@ func add_to_inventory_from_load(item: String):
 		"Fuse":
 			var icon_scene = fuse_icon.instantiate()
 			inventory_grid.add_child(icon_scene)
+
+		"Beans":
+			var icon_scene = beans_icon.instantiate()
+			inventory_grid.add_child(icon_scene)
+
+		"Cereal":
+			var icon_scene = cereal_icon.instantiate()
+			inventory_grid.add_child(icon_scene)
+
 
 		"Crowbar":
 			var icon_scene = crowbar_icon.instantiate()
@@ -121,3 +144,7 @@ func update_dialogue(sentence:String, player_speak:bool):
 		%Dialogue.visible = false
 		%PlayerAvatar.visible = false
 		%CallAvatar.visible = false
+
+
+
+	

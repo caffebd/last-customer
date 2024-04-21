@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://clguc1awcegkp"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gxa7u"]
+albedo_color = Color(0.0588235, 0.0509804, 0.0901961, 1)
+
+[node name="Tape" type="Node3D"]
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="."]
+transform = Transform3D(0.147612, 0, 0, 0, 0.0166711, 0, 0, 0, 0.147612, 0, 0.0191015, 0)
+sides = 16
+material = SubResource("StandardMaterial3D_gxa7u")

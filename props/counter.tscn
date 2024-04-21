@@ -1,0 +1,233 @@
+[gd_scene load_steps=18 format=3 uid="uid://bge2sm2fuq1ec"]
+
+[ext_resource type="Script" path="res://scripts/Counter.gd" id="1_ydm1k"]
+[ext_resource type="Script" path="res://scripts/Flip.gd" id="2_tu5dq"]
+[ext_resource type="Script" path="res://scripts/RegsiterBody.gd" id="2_tvfcb"]
+[ext_resource type="Script" path="res://scripts/BasketBody.gd" id="3_c3sp8"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6qowf"]
+albedo_color = Color(0.188235, 0.337255, 0.505882, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ggqhq"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_03t6n"]
+size = Vector3(1.015, 0.415, 0.49)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_5urxx"]
+size = Vector3(1, 0.15, 1)
+
+[sub_resource type="Animation" id="Animation_tgas4"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Flip:rotation:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Flip:rotation:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Flip:rotation:z")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_knlpv"]
+resource_name = "close_counter"
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Flip:rotation:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 1)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Flip:rotation:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 1)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Flip:rotation:z")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(-1.39626, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 1)
+}
+
+[sub_resource type="Animation" id="Animation_31nmo"]
+resource_name = "open_counter"
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Flip:rotation:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 1)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Flip:rotation:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 1)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Flip:rotation:z")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, -1.39626, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 1)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_n83q8"]
+_data = {
+"RESET": SubResource("Animation_tgas4"),
+"close_counter": SubResource("Animation_knlpv"),
+"open_counter": SubResource("Animation_31nmo")
+}
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3yor0"]
+albedo_color = Color(1, 1, 0.121569, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ejyi8"]
+albedo_color = Color(0.129412, 1, 0, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_o1f0v"]
+size = Vector3(1, 1.895, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4flgf"]
+albedo_color = Color(0, 1, 0, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_daqdw"]
+
+[node name="Counter" type="Node3D"]
+script = ExtResource("1_ydm1k")
+
+[node name="CounterTop" type="CSGBox3D" parent="."]
+transform = Transform3D(2.92344, 0, 0, 0, 0.167461, 0, 0, 0, 0.739026, -0.485192, 0.849158, 0)
+material = SubResource("StandardMaterial3D_6qowf")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="CounterTop"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CounterTop/StaticBody3D"]
+shape = SubResource("BoxShape3D_ggqhq")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="."]
+transform = Transform3D(0.219945, 0, 0, 0, 1, 0, 0, 0, 0.727149, -1.84633, 0.368023, 0)
+material = SubResource("StandardMaterial3D_6qowf")
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="."]
+transform = Transform3D(0.219945, 0, 0, 0, 1, 0, 0, 0, 0.727149, 2.45891, 0.368023, 0)
+material = SubResource("StandardMaterial3D_6qowf")
+
+[node name="CheckArea" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.6034, 0.792373, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CheckArea"]
+shape = SubResource("BoxShape3D_03t6n")
+
+[node name="Flip" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.47726, 0.792373, 0)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Flip"]
+transform = Transform3D(1.5081, 0, 0, 0, 1, 0, 0, 0, 0.795573, -0.77853, 0.0521199, 0.00711673)
+size = Vector3(1, 0.171875, 0.880737)
+
+[node name="FlipBody" type="StaticBody3D" parent="Flip/CSGBox3D"]
+collision_layer = 3
+collision_mask = 2
+script = ExtResource("2_tu5dq")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Flip/CSGBox3D/FlipBody"]
+shape = SubResource("BoxShape3D_5urxx")
+
+[node name="CounterAnim" type="AnimationPlayer" parent="."]
+unique_name_in_owner = true
+libraries = {
+"": SubResource("AnimationLibrary_n83q8")
+}
+
+[node name="Register" type="CSGBox3D" parent="."]
+transform = Transform3D(0.327721, 0, 0.175222, 0, 0.119593, 0, -0.175222, 0, 0.327721, -1.36583, 0.992729, 0)
+material = SubResource("StandardMaterial3D_3yor0")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Register"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.298533, 0, 0.962723, -0.349964)
+material = SubResource("StandardMaterial3D_ejyi8")
+
+[node name="RegsiterBody" type="StaticBody3D" parent="Register"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.489831, 0)
+collision_layer = 3
+collision_mask = 2
+script = ExtResource("2_tvfcb")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Register/RegsiterBody"]
+shape = SubResource("BoxShape3D_o1f0v")
+
+[node name="Basket" type="CSGPolygon3D" parent="."]
+unique_name_in_owner = true
+transform = Transform3D(0.534578, 0, -0.0553017, 0, 0.284795, 0, 0.112692, 0, 0.262335, 0.0387588, 0.931759, 0.0330454)
+polygon = PackedVector2Array(0.2, 0, 0, 1, 1, 1, 0.8, 0)
+material = SubResource("StandardMaterial3D_4flgf")
+
+[node name="BasketBody" type="StaticBody3D" parent="Basket"]
+transform = Transform3D(0.999999, 0, 7.45058e-09, 0, 1, 0, 2.98023e-08, 0, 0.999999, 0.483795, 0.537453, -0.427316)
+collision_layer = 3
+collision_mask = 2
+script = ExtResource("3_c3sp8")
+
+[node name="BasketColl" type="CollisionShape3D" parent="Basket/BasketBody"]
+unique_name_in_owner = true
+shape = SubResource("BoxShape3D_daqdw")
+
+[node name="ItemMarker" type="Marker3D" parent="."]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5618, 0.934123, 0)
+
+[connection signal="body_entered" from="CheckArea" to="Flip/CSGBox3D/FlipBody" method="_on_check_area_body_entered"]
+[connection signal="body_exited" from="CheckArea" to="Flip/CSGBox3D/FlipBody" method="_on_check_area_body_exited"]

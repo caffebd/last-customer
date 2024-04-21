@@ -1,0 +1,46 @@
+[gd_scene load_steps=7 format=3 uid="uid://edd5h22m2d3e"]
+
+[ext_resource type="Script" path="res://scripts/Customer.gd" id="1_qth8t"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_5o53w"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ia75a"]
+albedo_color = Color(0, 0.563816, 1.92523e-07, 1)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_6g6vp"]
+material = SubResource("StandardMaterial3D_ia75a")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fissa"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_5yu0p"]
+material = SubResource("StandardMaterial3D_fissa")
+
+[node name="Customer" type="CharacterBody3D" groups=["customer"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+axis_lock_angular_x = true
+axis_lock_angular_z = true
+script = ExtResource("1_qth8t")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_5o53w")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("CapsuleMesh_6g6vp")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.426843, 0, 0, 0, 0.426843, 0, 0, 0, 0.426843, 0.0793715, 0.599109, -0.270447)
+mesh = SubResource("SphereMesh_5yu0p")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.426843, 0, 0, 0, 0.426843, 0, 0, 0, 0.426843, -0.0613973, 0.599109, -0.270447)
+mesh = SubResource("SphereMesh_5yu0p")
+
+[node name="NavAgent" type="NavigationAgent3D" parent="."]
+unique_name_in_owner = true
+path_max_distance = 2.01
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

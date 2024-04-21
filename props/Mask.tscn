@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://mlpqtgr87g0i"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vxkpv"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vt1b2"]
+albedo_color = Color(1, 0, 0, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_naebg"]
+albedo_color = Color(1, 0, 0, 1)
+
+[node name="Mask" type="Node3D"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="."]
+transform = Transform3D(0.314884, 0, 0, 0, 0.0233816, 0, 0, 0, 0.41486, 0, 0, 0)
+sides = 6
+material = SubResource("StandardMaterial3D_vxkpv")
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="."]
+transform = Transform3D(0.099331, 0, 0, 0, 0.099331, 0, 0, 0, 0.099331, 0.0559936, -0.0189842, 0.0815735)
+material = SubResource("StandardMaterial3D_vt1b2")
+
+[node name="CSGSphere3D2" type="CSGSphere3D" parent="."]
+transform = Transform3D(0.099331, 0, 0, 0, 0.099331, 0, 0, 0, 0.099331, -0.0543421, -0.0189842, 0.0815735)
+material = SubResource("StandardMaterial3D_naebg")

@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://bbgnev06sg7gx"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_anvuj"]
+
+[node name="CerealHand" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.510615, 0, 0, 0, 0.835537, 0, 0, 0, 0.145246, 0, 0, 0)
+mesh = SubResource("BoxMesh_anvuj")

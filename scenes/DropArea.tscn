@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://b4qnkt7yac2k5"]
+
+[ext_resource type="Script" path="res://scripts/drop_area.gd" id="1_hb5m5"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_pd5wt"]
+
+[node name="TestArea" type="Area3D" groups=["drop"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.04353, 1.38572, -14.2847)
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("1_hb5m5")
+item_needed = "Beans"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("BoxShape3D_pd5wt")
