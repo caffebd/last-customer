@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://cpucufodphld5"]
+[gd_scene load_steps=8 format=3 uid="uid://cpucufodphld5"]
 
 [ext_resource type="Script" path="res://scripts/Player.gd" id="1_gf72i"]
 [ext_resource type="PackedScene" uid="uid://cm3d1u3ihuwtd" path="res://scenes/HUD.tscn" id="2_i2rul"]
@@ -7,6 +7,9 @@
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_pdoig"]
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_k6qek"]
+albedo_color = Color(0.0588235, 1, 1, 1)
+
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_0ogxy"]
 radius = 0.35
 
@@ -14,8 +17,8 @@ radius = 0.35
 script = ExtResource("1_gf72i")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-visible = false
 mesh = SubResource("CapsuleMesh_pdoig")
+surface_material_override/0 = SubResource("StandardMaterial3D_k6qek")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_0ogxy")

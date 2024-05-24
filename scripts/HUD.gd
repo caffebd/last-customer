@@ -11,8 +11,6 @@ var crowbar_icon = preload("res://scenes/CrowbarIcon.tscn")
 
 var beans_icon = preload("res://scenes/BeansIcon.tscn")
 
-var cereal_icon = preload("res://scenes/CerealIcon.tscn")
-
 
 var inventory_index: int = 0
 
@@ -46,11 +44,6 @@ func add_to_inventory(item:String):
 				inventory_grid.add_child(icon_scene)
 				SaveState.saved_inventory.append(item)
 
-			"Cereal":
-				var icon_scene = cereal_icon.instantiate()
-				inventory_grid.add_child(icon_scene)
-				SaveState.saved_inventory.append(item)
-
 			"Crowbar":
 				var icon_scene = crowbar_icon.instantiate()
 				inventory_grid.add_child(icon_scene)
@@ -67,10 +60,6 @@ func add_to_inventory_from_load(item: String):
 
 		"Beans":
 			var icon_scene = beans_icon.instantiate()
-			inventory_grid.add_child(icon_scene)
-
-		"Cereal":
-			var icon_scene = cereal_icon.instantiate()
 			inventory_grid.add_child(icon_scene)
 
 

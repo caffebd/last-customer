@@ -31,14 +31,10 @@ var going_home: bool = false
 
 
 func _ready():
-	#call_deferred("_next_marker")
-	Signals.start_customer.connect(_start_walking)
+	call_deferred("_next_marker")
 	Signals.go_home.connect(_go_home)
 	#%NavAgent.set_target_position(counter_position.global_position)
-
-
-func _start_walking():
-	_next_marker()
+	
 
 func _next_marker():
 

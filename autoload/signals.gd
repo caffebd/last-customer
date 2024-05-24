@@ -3,7 +3,6 @@ extends Node
 
 signal hand_item(item)
 
-signal start_customer()
 
 signal remove_item(item)
 

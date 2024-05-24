@@ -35,7 +35,6 @@ var in_hand:String=""
 var crowbar_hand = preload("res://scenes/CrowbarHand.tscn")
 var fuse_hand = preload("res://scenes/FuseHand.tscn")
 var beans_hand = preload("res://props/beans_hand.tscn")
-var cereal_hand = preload("res://props/Cerealhand.tscn")
 
 
 
@@ -77,10 +76,6 @@ func _set_hand_item(item:String):
 			in_hand = item
 		"Beans":
 			var in_hand_item = beans_hand.instantiate()
-			player_hand.add_child(in_hand_item)
-			in_hand = item
-		"Cereal":
-			var in_hand_item = cereal_hand.instantiate()
 			player_hand.add_child(in_hand_item)
 			in_hand = item
 		"Fuse":
@@ -207,10 +202,6 @@ func _place_item(item, location):
 			_remove_item(item)
 		"Beans":
 			var in_hand_item = beans_hand.instantiate()
-			location.add_child(in_hand_item)
-			_remove_item(item)
-		"Cereal":
-			var in_hand_item = cereal_hand.instantiate()
 			location.add_child(in_hand_item)
 			_remove_item(item)
 		"Fuse":
